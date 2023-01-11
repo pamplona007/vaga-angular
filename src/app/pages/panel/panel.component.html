@@ -1,1 +1,30 @@
-<p>panel works!</p>
+<app-page-layout pageTitle="Painel">
+    <div class="top">
+        <div class="counter" [ngStyle]="this.currentStyle">
+            {{ treatNumber(currentNumber) }}
+            <div [@valueAnimation]="currentNumber" class="increment-animation">
+                {{ treatNumber(currentNumber - previousNumbers[0]) }}
+            </div>
+        </div>
+        <div class="control">
+            <div class="date">
+                {{ currentDate }}
+            </div>
+            <div class="offset">
+                <input type="number" [(ngModel)]="offset" placeholder="offset" />
+            </div>
+        </div>
+    </div>
+    <div class="previous-numbers">
+        <div class="number header">
+            Números anteriores
+        </div>
+        <div class="difference header">
+            Diferença
+        </div>
+        <ng-template ngFor let-number [ngForOf]="previousNumbers" let-i="index">
+            <div class="number">{{ treatNumber(number) }}</div>
+            <div class="difference">{{ (previousNumbers[i + 1] && treatNumber(number - previousNumbers[i + 1])) || '' }}</div>
+        </ng-template>
+    </div>
+</app-page-layout>

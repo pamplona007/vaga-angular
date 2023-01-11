@@ -9,6 +9,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TableComponent } from './pages/table/table.component';
 import { ImageComponent } from './pages/image/image.component';
 import { PanelComponent } from './pages/panel/panel.component';
+import { PageLayoutComponent } from './components/page-layout/page-layout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -19,10 +22,13 @@ import { PanelComponent } from './pages/panel/panel.component';
         TableComponent,
         ImageComponent,
         PanelComponent,
+        PageLayoutComponent,
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
+        FormsModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
