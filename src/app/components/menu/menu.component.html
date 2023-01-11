@@ -1,0 +1,12 @@
+<nav [ngClass]="{ '-active': isMenuOpen }" class="app-menu">
+    <div class="app-menu-item">
+        <a routerLink="/" (click)="toggleMenu()">Tabela</a>
+    </div>
+    <div class="app-menu-item">
+        <a routerLink="/image" (click)="toggleMenu()">Imagem</a>
+    </div>
+    <div class="app-menu-item">
+        <a routerLink="/panel" (click)="toggleMenu()">Painel</a>
+    </div>
+</nav>
+<div [ngClass]="{ '-active': isMenuOpen }" class="menu-overlay" (click)="toggleMenu()"></div>

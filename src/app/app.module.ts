@@ -3,9 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { TableComponent } from './pages/table/table.component';
+import { ImageComponent } from './pages/image/image.component';
+import { PanelComponent } from './pages/panel/panel.component';
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        MenuComponent,
+        FooterComponent,
+        TableComponent,
+        ImageComponent,
+        PanelComponent,
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,

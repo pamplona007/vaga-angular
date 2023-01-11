@@ -1,0 +1,22 @@
+<header class="app-header">
+    <div class="menu-button-wrapper">
+        <button type="button" [ngClass]="{ '-active': isMenuOpen }" class="menu-button" (click)="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <div class="app-title">
+        <h1>Teste Web Angular</h1>
+    </div>
+
+    <div class="profile">
+        <div class="profile-image">
+            <img src="assets/images/profile.png" alt="Profile image">
+        </div>
+        <div class="profile-name">
+            <span>João</span>
+        </div>
+    </div>
+</header>
