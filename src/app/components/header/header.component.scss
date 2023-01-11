@@ -1,0 +1,102 @@
+$dark: #232323;
+$light: #cdcdcd;
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 75px;
+    width: 100%;
+
+    background: $dark;
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        color: $light;
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100px;
+        height: 100%;
+
+        .profile-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: $light;
+
+            img {
+                width: calc(100% - 2px);
+                height: calc(100% - 2px);
+                object-fit: cover;
+            }
+        }
+
+        .profile-name {
+            width: 100%;
+            margin-left: 10px;
+            color: $light;
+        }
+    }
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        position: relative;
+
+        background: $light;
+        border-radius: 3px;
+
+        z-index: 20;
+
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+
+        &:first-child {
+            transform-origin: 0% 0%;
+        }
+
+        &:last-child {
+            transform-origin: 0% 100%;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 6px;
+        }
+    }
+
+    &.-active {
+        span {
+            opacity: 1;
+            transform: rotate(45deg) translate(-2px, -1px);
+            background: $dark;
+
+            &:nth-child(2) {
+                opacity: 0;
+                transform: rotate(0deg) scale(0.2, 0.2);
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(0, -1px);
+            }
+        }
+    }
+}
