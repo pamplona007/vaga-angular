@@ -1,0 +1,41 @@
+.top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    > .counter {
+        font-size: 5rem;
+        min-width: 50%;
+        position: relative;
+
+        > .increment-animation {
+            font-size: 2rem;
+            position: absolute;
+            top: -5px;
+            right: 0;
+            opacity: 0;
+            transform: translateY(0);
+            color: #c3c3c3;
+        }
+    }
+
+    > .control {
+
+        > .offset {
+            margin-top: 10px;
+        }
+    }
+}
+
+.previous-numbers {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    flex-flow: column;
+    padding: 20px 10px;
+    gap: 10px;
+    font-style: italic;
+
+    > .header {
+        font-weight: bold;
+    }
+}
