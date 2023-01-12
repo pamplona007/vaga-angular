@@ -1,0 +1,46 @@
+.app-button {
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    background: #3c45c7;
+    color: #fff;
+
+    transition: box-shadow 0.2s ease-in-out,
+        background 0.2s ease-in-out;
+
+    &:hover {
+        background: #2a2f9c;
+        box-shadow:
+            0px 1.1px 1.5px rgba(0, 0, 0, 0.029),
+            0px 2.5px 3.7px rgba(0, 0, 0, 0.039),
+            0px 4.8px 6.9px rgba(0, 0, 0, 0.045),
+            0px 8.5px 12.3px rgba(0, 0, 0, 0.051),
+            0px 15.9px 23px rgba(0, 0, 0, 0.061),
+            0px 38px 55px rgba(0, 0, 0, 0.1);
+    }
+
+    &:active {
+        box-shadow:
+            0px 2.3px 1.5px rgba(0, 0, 0, 0.038),
+            0px 5.5px 3.7px rgba(0, 0, 0, 0.05),
+            0px 10.4px 6.9px rgba(0, 0, 0, 0.058),
+            0px 18.5px 12.3px rgba(0, 0, 0, 0.066),
+            0px 34.7px 23px rgba(0, 0, 0, 0.079),
+            0px 83px 55px rgba(0, 0, 0, 0.13);
+    }
+
+    &:disabled {
+        background: #ccc;
+        color: #666;
+        cursor: not-allowed;
+
+        &:hover {
+            box-shadow: none;
+        }
+    }
+}

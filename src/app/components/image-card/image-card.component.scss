@@ -1,0 +1,48 @@
+.card-wrapper {
+
+    .image-card {
+        width: 200px;
+        background: #fff;
+        padding: 10px;
+        padding-bottom: 35px;
+        position: relative;
+        transform: rotate(var(--rotation, 0deg));
+
+        box-shadow:
+            0px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+            0px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+            0px 12.5px 10px rgba(0, 0, 0, 0.035),
+            0px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+            0px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+            0px 100px 80px rgba(0, 0, 0, 0.07)
+        ;
+
+        img {
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .name {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-family: 'Caveat', cursive;
+            transform: rotate(-10deg) translateY(10px);
+        }
+
+        .delete-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: none;
+            background: none;
+
+            color: #f00;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    }
+}

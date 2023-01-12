@@ -12,6 +12,11 @@ import { PanelComponent } from './pages/panel/panel.component';
 import { PageLayoutComponent } from './components/page-layout/page-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { ImageCardComponent } from './components/image-card/image-card.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { InputColorComponent } from './components/input-color/input-color.component';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
     declarations: [
@@ -23,12 +28,17 @@ import { FormsModule } from '@angular/forms';
         ImageComponent,
         PanelComponent,
         PageLayoutComponent,
+        ImageCardComponent,
+        InputColorComponent,
+        ButtonComponent,
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         AppRoutingModule,
         FormsModule,
+        DragDropModule,
+        FontAwesomeModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
