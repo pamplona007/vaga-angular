@@ -1,0 +1,11 @@
+<div class="card-wrapper" [ngStyle]="{ '--rotation': rotation + 'deg' }">
+    <div class="image-card" draggable>
+        <img [src]="image.url" [alt]="image.name" />
+        <div class="name">
+            {{ image.name }}
+        </div>
+        <button class="delete-button" (click)="removeImageHandler()">
+            <fa-icon [icon]="deleteIcon" size="lg"></fa-icon>
+        </button>
+    </div>
+</div>

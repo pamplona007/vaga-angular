@@ -1,1 +1,104 @@
-<p>image works!</p>
+<app-page-layout pageTitle="Imagem">
+    <div class="groups" cdkDropListGroup>
+        <div
+            class="group cdk-drop-list"
+            [ngStyle]="{
+                '--group-border': groupABorderColor,
+                '--group-background': groupABackgroundColor
+            }"
+        >
+            <div class="options">
+                <app-input-color
+                    label="Border"
+                    name="groupABorderColor"
+                    [model]="groupABorderColor"
+                    (change)="optionChangeHandler($event, 'groupABorderColor')"
+                ></app-input-color>
+                <app-input-color
+                    label="Background"
+                    name="groupABackgroundColor"
+                    [model]="groupABackgroundColor"
+                    (change)="
+                        optionChangeHandler($event, 'groupABackgroundColor')
+                    "
+                ></app-input-color>
+            </div>
+
+            <div
+                class="dropzone"
+                cdkDropList
+                [cdkDropListData]="groupAImages"
+                (cdkDropListDropped)="onDrop($event)"
+            >
+                <app-image-card
+                    cdkDrag
+                    *ngFor="let image of groupAImages"
+                    [image]="image"
+                    (removeImage)="removeImage(image, 'A')"
+                ></app-image-card>
+            </div>
+
+            <app-button
+            class="add-button"
+            (click)="addImage('A')"
+            [disabled]="!(groupAImages.length < 5)"
+            >
+                Adicionar imagem
+            </app-button>
+        </div>
+
+        <div
+            class="group cdk-drop-list"
+            [ngStyle]="{
+                '--group-border': groupBBorderColor,
+                '--group-background': groupBBackgroundColor
+            }"
+        >
+            <div class="options">
+                <app-input-color
+                    label="Border"
+                    name="groupBBorderColor"
+                    [model]="groupBBorderColor"
+                    (change)="optionChangeHandler($event, 'groupBBorderColor')"
+                ></app-input-color>
+                <app-input-color
+                    label="Background"
+                    name="groupBBackgroundColor"
+                    [model]="groupBBackgroundColor"
+                    (change)="
+                        optionChangeHandler($event, 'groupBBackgroundColor')
+                    "
+                ></app-input-color>
+            </div>
+
+            <div
+                class="dropzone"
+                cdkDropList
+                [cdkDropListData]="groupBImages"
+                (cdkDropListDropped)="onDrop($event)"
+            >
+                <app-image-card
+                    cdkDrag
+                    *ngFor="let image of groupBImages"
+                    [image]="image"
+                    (removeImage)="removeImage(image, 'B')"
+                ></app-image-card>
+            </div>
+
+            <app-button
+            class="add-button"
+            (click)="addImage('B')"
+            [disabled]="!(groupBImages.length < 5)"
+            >
+                Adicionar imagem
+            </app-button>
+        </div>
+    </div>
+
+    <input
+        type="file"
+        id="image-upload"
+        (change)="fileInputChangeHandler($event)"
+        #imageUpload
+    />
+</app-page-layout>

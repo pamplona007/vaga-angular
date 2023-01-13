@@ -1,5 +1,9 @@
 .content {
+    display: flex;
+    flex-flow: column;
     width: 100%;
+    min-height: calc(100vh - 75px - 35px - 50px);
+    position: relative;
 
     > hr {
         margin: 20px 0;

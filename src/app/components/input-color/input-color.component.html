@@ -1,0 +1,10 @@
+<div class="input-color">
+    <input
+        type="color"
+        [id]="name"
+        [name]="name"
+        [ngModel]="model"
+        (change)="changeHandler($event)"
+    />
+    <label [for]="name">{{label}}</label>
+</div>
