@@ -55,17 +55,16 @@ $light: #cdcdcd;
     cursor: pointer;
     height: 35px;
     width: 45px;
+    position: relative;
+    z-index: 20;
 
     span {
         display: block;
         width: 33px;
         height: 4px;
-        position: relative;
 
         background: $light;
         border-radius: 3px;
-
-        z-index: 20;
 
         transform-origin: 4px 0px;
         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),

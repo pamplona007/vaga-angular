@@ -2,7 +2,6 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Image } from 'src/app/types';
 
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { faPlus, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-image',
@@ -20,7 +19,6 @@ export class ImageComponent implements OnInit {
     public groupABackgroundColor!: string;
 
     public currentlySelectedGroup!: string;
-    public addIcon: IconDefinition = faPlus;
 
     @ViewChild('imageUpload') imageUpload!: ElementRef;
 

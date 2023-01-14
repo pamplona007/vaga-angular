@@ -12,8 +12,7 @@ export class ImageCardComponent implements OnInit {
     @Output() public removeImage: EventEmitter<unknown> = new EventEmitter<unknown>();
 
     public rotation!: number;
-
-    deleteIcon = faXmark;
+    public deleteIcon = faXmark;
 
     ngOnInit(): void {
         this.rotation = Math.floor(Math.random() * 14) - 7;
