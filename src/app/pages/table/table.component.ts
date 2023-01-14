@@ -131,10 +131,7 @@ export class TableComponent implements OnInit, AfterViewInit {
     ];
 
     public tableHeader: Column[] = [];
-    public currentPage = 1;
-    public pageSize = 10;
-
-    dataSource = new MatTableDataSource<Product>();
+    public dataSource = new MatTableDataSource<Product>();
 
     @ViewChild(MatPaginator) paginator!: MatPaginator;
     @ViewChild(MatSort) sort!: MatSort;

@@ -6,6 +6,29 @@ import {
     transition,
 } from '@angular/animations';
 
+const styles = [
+    {
+        'color': '#f44336',
+        'font-weight': 700,
+    },
+    {
+        'color': '#e91e63',
+        'font-weight': 400,
+    },
+    {
+        'color': '#9c27b0',
+        'font-weight': 200,
+    },
+    {
+        'color': '#673ab7',
+        'font-weight': 700,
+    },
+    {
+        'color': '#3f51b5',
+        'font-weight': 400,
+    },
+];
+
 @Component({
     selector: 'app-panel',
     templateUrl: './panel.component.html',
@@ -32,37 +55,14 @@ import {
     ],
 })
 export class PanelComponent implements OnInit {
-    interval!: ReturnType<typeof setInterval>;
+    public interval!: ReturnType<typeof setInterval>;
 
-    styles = [
-        {
-            'color': '#f44336',
-            'font-weight': 700,
-        },
-        {
-            'color': '#e91e63',
-            'font-weight': 400,
-        },
-        {
-            'color': '#9c27b0',
-            'font-weight': 200,
-        },
-        {
-            'color': '#673ab7',
-            'font-weight': 700,
-        },
-        {
-            'color': '#3f51b5',
-            'font-weight': 400,
-        },
-    ];
-
-    initialNumber = (Math.random() * 1000000) + 1000000;
-    previousNumbers: number[] = [];
-    currentNumber = 0;
-    currentStyle = this.styles[0];
-    currentDate = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
-    offset!: number;
+    public initialNumber = (Math.random() * 1000000) + 1000000;
+    public previousNumbers: number[] = [];
+    public currentNumber = 0;
+    public currentStyle = styles[0];
+    public currentDate = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+    public offset!: number;
 
     treatNumber(number: number): string {
         const splitNumber = String(number)
@@ -89,7 +89,7 @@ export class PanelComponent implements OnInit {
             this.previousNumbers.unshift(this.currentNumber);
             this.previousNumbers = this.previousNumbers.slice(0, 10);
             this.currentNumber = newNumber;
-            this.currentStyle = this.styles[differenceModule % this.styles.length];
+            this.currentStyle = styles[differenceModule % styles.length];
             this.currentDate = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
         }, 1000);
     }

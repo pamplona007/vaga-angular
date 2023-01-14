@@ -7,7 +7,7 @@ import { UiService } from 'src/app/services/ui.service';
     styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-    isMenuOpen = false;
+    public isMenuOpen = false;
 
     constructor(private ui: UiService) {}
 

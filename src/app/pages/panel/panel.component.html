@@ -1,17 +1,18 @@
 <app-page-layout pageTitle="Painel">
     <div class="top">
-        <div class="counter" [ngStyle]="this.currentStyle">
+        <div class="counter" [ngStyle]="currentStyle">
             {{ treatNumber(currentNumber) }}
             <div [@valueAnimation]="currentNumber" class="increment-animation">
                 {{ treatNumber(currentNumber - previousNumbers[0]) }}
             </div>
         </div>
         <div class="control">
+            <mat-form-field>
+                <mat-label>Offset</mat-label>
+                <input matInput type="number" [(ngModel)]="offset" />
+            </mat-form-field>
             <div class="date">
                 {{ currentDate }}
-            </div>
-            <div class="offset">
-                <input type="number" [(ngModel)]="offset" placeholder="offset" />
             </div>
         </div>
     </div>
