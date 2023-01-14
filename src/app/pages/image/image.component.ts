@@ -92,7 +92,7 @@ export class ImageComponent implements OnInit {
         };
     }
 
-    onDrop(event: CdkDragDrop<Image[]>) {
+    dropHandler(event: CdkDragDrop<Image[]>) {
         if (event.previousContainer === event.container) {
             moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
             return;

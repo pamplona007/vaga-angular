@@ -7237,6 +7237,10 @@ ws@~8.2.3:
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.2.3.tgz#63a56456db1b04367d0b721a0b80cae6d8becbba"
   integrity sha512-wBuoj1BDpC6ZQ1B7DWQBYVLphPWkm8i9Y0/3YdHjHKHiohOJ1ws+3OccDWtH+PoC9DZD5WOTrJvNbWvjS6JWaA==
 
+"xlsx@https://cdn.sheetjs.com/xlsx-0.19.1/xlsx-0.19.1.tgz":
+  version "0.19.1"
+  resolved "https://cdn.sheetjs.com/xlsx-0.19.1/xlsx-0.19.1.tgz#26b48611bb82799de36add2f63b197bec4fc6a8d"
+
 y18n@^5.0.5:
   version "5.0.8"
   resolved "https://registry.yarnpkg.com/y18n/-/y18n-5.0.8.tgz#7f4934d0f7ca8c56f95314939ddcd2dd91ce1d55"

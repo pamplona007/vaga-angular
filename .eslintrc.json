@@ -138,7 +138,6 @@
         "no-unreachable-loop": "error",
         "no-template-curly-in-string": "warn",
         "default-param-last": "warn",
-        "dot-notation": "warn",
         "curly": ["warn", "all"],
         "brace-style": "warn",
         "eqeqeq": ["error", "smart"],
