@@ -28,7 +28,7 @@
                 class="dropzone"
                 cdkDropList
                 [cdkDropListData]="groupAImages"
-                (cdkDropListDropped)="onDrop($event)"
+                (cdkDropListDropped)="dropHandler($event)"
             >
                 <app-image-card
                     cdkDrag
@@ -75,7 +75,7 @@
                 class="dropzone"
                 cdkDropList
                 [cdkDropListData]="groupBImages"
-                (cdkDropListDropped)="onDrop($event)"
+                (cdkDropListDropped)="dropHandler($event)"
             >
                 <app-image-card
                     cdkDrag

@@ -1,1 +1,64 @@
-<p>table works!</p>
+<app-page-layout pageTitle="Tabela">
+    <div class="filters">
+        <mat-form-field appearance="fill">
+            <mat-label>Toppings</mat-label>
+            <mat-select [(value)]="displayedColumns" multiple>
+                <mat-option
+                    *ngFor="let column of dataColumns"
+                    [value]="column.key"
+                >
+                    {{ column.label }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Filtro</mat-label>
+            <input
+            matInput
+            [value]="filterString"
+            (change)="handleFilterChange($event)"
+            />
+        </mat-form-field>
+    </div>
+    <table mat-table matSort [dataSource]="dataSource" class="products-table">
+        <ng-container
+            *ngFor="let column of tableHeader; let index = index"
+            [matColumnDef]="column.key"
+        >
+            <th
+                mat-header-cell
+                *matHeaderCellDef
+                (dragstart)="dragStartColumn(index)"
+                (dragover)="allowDrop($event)"
+                (dragenter)="dragEnterColumn($event, index)"
+                (dragleave)="dragLeaveColumn($event)"
+                (dragend)="dragEndColumn($event)"
+                (drop)="dropColumn(index)"
+                mat-sort-header
+                draggable="true"
+            >
+                {{ column.label }}
+            </th>
+            <td mat-cell *matCellDef="let element">
+                {{
+                    column.render
+                        ? column.render(element[column.key])
+                        : element[column.key]
+                }}
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+        [pageSizeOptions]="[10, 20]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements"
+    >
+    </mat-paginator>
+
+    <app-button (click)="exportToExcel()"> Exportar </app-button>
+</app-page-layout>

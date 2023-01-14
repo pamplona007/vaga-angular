@@ -1,0 +1,25 @@
+.products-table {
+
+    th {
+        background: none;
+        border: 2px solid transparent;
+
+        &.drag-enter {
+            background-color: #f5f5f5;
+
+            &.drag-over-left {
+                border-left: 2px solid #2b2b2b
+            }
+
+            &.drag-over-right {
+                border-right: 2px solid #2b2b2b;
+            }
+        }
+    }
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
